@@ -36,11 +36,10 @@
 
   /* Prints */
   .prints { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; }
-  .print { border-radius: 14px; background: linear-gradient(135deg, var(--azul), var(--verde));
-           aspect-ratio: 16/10; display: flex; align-items: center; justify-content: center;
-           color: #fff; font-weight: 600; font-size: 15px; box-shadow: 0 8px 28px rgba(41,128,185,.25);
-           flex-direction: column; gap: 10px; text-align: center; padding: 16px; }
-  .print svg { width: 54px; height: 54px; opacity: .95; }
+  .print-img { margin: 0; display: flex; flex-direction: column; gap: 12px; }
+  .print-img img { width: 100%; border-radius: 14px; box-shadow: 0 8px 28px rgba(44,62,80,.18);
+                   border: 1px solid rgba(44,62,80,.08); }
+  .print-img figcaption { text-align: center; color: var(--cinza); font-size: 14px; font-weight: 600; }
 
   /* Benefícios */
   .beneficios { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
@@ -101,20 +100,19 @@
   <div class="container">
     <h2>Veja o app funcionando</h2>
     <p class="section-sub">Interface simples e direta: você entende tudo na primeira vez que abrir.</p>
-    <!-- TODO PRINTS: substituir placeholders por screenshots reais do app -->
     <div class="prints">
-      <div class="print">
-        <svg viewBox="0 0 256 256"><rect x="52" y="150" width="36" height="54" rx="4" fill="#fff"/><rect x="110" y="112" width="36" height="92" rx="4" fill="#fff"/><rect x="168" y="70" width="36" height="134" rx="4" fill="#fff"/></svg>
-        [Print: Tela Mensal]<br>Entradas e saídas do mês
-      </div>
-      <div class="print">
-        <svg viewBox="0 0 256 256"><polyline points="40,190 100,120 150,150 216,66" fill="none" stroke="#fff" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        [Print: Visão Anual]<br>Evolução do ano inteiro
-      </div>
-      <div class="print">
-        <svg viewBox="0 0 256 256"><circle cx="128" cy="128" r="80" fill="none" stroke="#fff" stroke-width="20"/><path d="M128 48 A80 80 0 0 1 208 128 L128 128 Z" fill="#fff"/></svg>
-        [Print: Metas]<br>Objetivos e progresso
-      </div>
+      <figure class="print-img">
+        <img src="img/mensal.png" alt="Tela Mensal do Controle Financeiro Pro" loading="lazy">
+        <figcaption>Tela Mensal — resumo completo do mês</figcaption>
+      </figure>
+      <figure class="print-img">
+        <img src="img/anual.png" alt="Visão Anual com gráficos" loading="lazy">
+        <figcaption>Visão Anual — gráficos e comparações</figcaption>
+      </figure>
+      <figure class="print-img">
+        <img src="img/metas.png" alt="Metas por categoria" loading="lazy">
+        <figcaption>Metas — limites de gastos por categoria</figcaption>
+      </figure>
     </div>
   </div>
 </section>
