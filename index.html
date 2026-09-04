@@ -36,7 +36,21 @@
   .btn:active { transform: translateY(-1px) scale(.98); transition-duration: .1s; }
   .btn:focus-visible { outline: 3px solid var(--verde); outline-offset: 3px; }
   @media (prefers-reduced-motion: reduce) { .btn, .btn::after { transition: none; } .btn:hover::after { transform: translateX(-160%) skewX(-12deg); } }
-  .hero .micro { margin-top: 14px; font-size: 13px; opacity: .85; }
+  .trust-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 18px; }
+  .trust-badge { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px;
+         background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.25);
+         border-radius: 999px; font-size: 14px; font-weight: 600; color: #fff;
+         backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+         transition: background .25s ease, transform .25s ease; }
+  .trust-badge::before { content: '✓'; display: inline-flex; align-items: center; justify-content: center;
+         width: 20px; height: 20px; background: var(--verde); color: #fff; border-radius: 50%;
+         font-size: 12px; font-weight: 700; flex-shrink: 0; }
+  .trust-badge:hover { background: rgba(255,255,255,.25); transform: translateY(-2px); }
+  .cta-final .trust-badges { margin-top: 20px; }
+  .cta-final .trust-badge { background: rgba(255,255,255,.2); border-color: rgba(255,255,255,.35); }
+  .cta-final .trust-badge:hover { background: rgba(255,255,255,.35); }
+  @media (max-width: 600px) { .trust-badges { flex-direction: column; align-items: center; }
+         .trust-badge { width: 100%; max-width: 280px; justify-content: center; } }
 
   /* Seções */
   section { padding: 64px 0; }
@@ -102,7 +116,11 @@
     <h1>Pare de perder dinheiro sem saber para onde ele foi.</h1>
     <p class="sub">O Controle Financeiro Pro organiza suas contas em minutos por dia — direto no seu PC, com privacidade total e sem mensalidade.</p>
     <a class="btn" href="https://pay.kiwify.com.br/zUM6B7P" target="_blank" rel="noopener">Quero organizar minhas finanças →</a>
-    <p class="micro">Pagamento único • Licença vitalícia • Garantia de 7 dias</p>
+    <div class="trust-badges">
+      <span class="trust-badge">Pagamento único</span>
+      <span class="trust-badge">Licença vitalícia</span>
+      <span class="trust-badge">Garantia 7 dias</span>
+    </div>
   </div>
 </header>
 
@@ -252,7 +270,11 @@
   <div class="container">
     <h2>Suas finanças organizadas hoje, não amanhã.</h2>
     <a class="btn" href="https://pay.kiwify.com.br/zUM6B7P" target="_blank" rel="noopener">Quero meu Controle Financeiro Pro →</a>
-    <p class="micro" style="margin-top:14px;font-size:13px;opacity:.85">R$ 47 à vista • Garantia de 7 dias • Entrega imediata</p>
+    <div class="trust-badges">
+      <span class="trust-badge">R$ 47 à vista</span>
+      <span class="trust-badge">Garantia 7 dias</span>
+      <span class="trust-badge">Entrega imediata</span>
+    </div>
   </div>
 </section>
 
